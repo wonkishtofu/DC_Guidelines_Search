@@ -51,7 +51,8 @@ export default async function handler(req: NextRequest) {
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey)
 
     // Moderate the content to comply with OpenAI T&C
-    const sanitizedQuery = query.trim()
+    const sanitizedQuery = query.trim().concat(" Answer in specific, numerical terms if possible.")
+    console.log(sanitizedQuery);
     const moderationResponse: CreateModerationResponse = await openai
       .createModeration({ input: sanitizedQuery })
       .then((res) => res.json())
@@ -68,7 +69,7 @@ export default async function handler(req: NextRequest) {
     // Create embedding from query
     const embeddingResponse = await openai.createEmbedding({
       model: 'text-embedding-ada-002',
-      input: sanitizedQuery.replaceAll('\n', ' '),
+      input: sanitizedQuery.replaceAll('\n', ' ')
     })
 
     if (embeddingResponse.status !== 200) {
@@ -112,29 +113,26 @@ export default async function handler(req: NextRequest) {
 
     const prompt = codeBlock`
       ${oneLine`
-        You are a very enthusiastic Supabase representative who loves
-        to help people! Given the following sections from the Supabase
-        documentation, answer the question using only that information,
-        outputted in markdown format. If you are unsure and the answer
-        is not explicitly written in the documentation, say
-        "Sorry, I don't know how to help with that."
+        Your name is Jamie Neo.
+        You are a very enthusiastic Government Officer working for URA in 
+        Singapore, who loves to help people! Use the the following sections from the 
+        URA Development Control Guidelines website to answer questions given by the user. The answer should be
+        outputted in markdown format. If you are unsure or the answer
+        is not explicitly written in the Context section you can infer the answer,
+        but caveat the answer by mentioning this is not mentioned on the URA Development Control Guidelines website.
       `}
 
       Context sections:
       ${contextText}
 
-      Question: """
-      ${sanitizedQuery}
-      """
+      
 
-      Answer as markdown (including related code snippets if available):
+      Answer as markdown (embed links if it is mentioned in the Context sections):
     `
 
-    const response = await openai.createCompletion({
-      model: 'text-davinci-003',
-      prompt,
-      max_tokens: 512,
-      temperature: 0,
+    const response = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages:[ {"role": "system", "content": prompt},{"role": "user", "content": sanitizedQuery}] ,
       stream: true,
     })
 
