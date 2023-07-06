@@ -81,9 +81,9 @@ export function SearchDialog() {
       <Dialog open={open}>
         <DialogContent className="sm:max-w-[850px] text-black overflow-scroll max-h-screen overscroll-none">
           <DialogHeader>
-            <DialogTitle>Ask Jamie Neo:</DialogTitle>
+            <DialogTitle>Ask the bot:</DialogTitle>
             <DialogDescription>
-              EMA's Document-grounded Generative Search built on whole lotta coffee ☕.
+              ChatGPT for DC Guidelines
             </DialogDescription>
             <hr />
             <button className="absolute top-0 right-2 p-2" onClick={() => setOpen(false)}>
@@ -164,9 +164,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What is the proportion of natural gas in our energy mix?')}
+                  onClick={(_) => setQuery('Is there a minimum building setback from roads for condos?')}
                 >
-                  What is the proportion of natural gas in our energy mix?
+                  Is there a minimum building setback from roads for condos?
                 </button>
                 <button
                   type="button"
@@ -175,9 +175,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What are Singapore\'s Solar Energy targets by 2030?')}
+                  onClick={(_) => setQuery('Are there any height constraints for boundary walls?')}
                 >
-                  What are Singapore's Solar Energy targets by 2030?
+                  Are there any height constraints for boundary walls?
                 </button>
                 <button
                   type="button"
@@ -186,9 +186,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('Can I sell solar energy back to the grid?')}
+                  onClick={(_) => setQuery('Where can I build a landed house?')}
                 >
-                  Can I sell solar energy back to the grid?
+                  Where can I build a landed house?
                 </button>
                 <button
                   type="button"
@@ -197,9 +197,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What is EMA doing to proliferate the use of Solar PV in Singapore?')}
+                  onClick={(_) => setQuery('Are there size constraints for balconies in condos?')}
                 >
-                  What is EMA doing to proliferate the use of Solar PV in Singapore?
+                  Are there size constraints for balconies in condos?
                 </button>
                 <button
                   type="button"
@@ -208,9 +208,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What are the approvals I have to obtain to install a Solar PV unit in my home?')}
+                  onClick={(_) => setQuery('Are there guidelines to the height of hotels?')}
                 >
-                  What are the approvals I have to obtain to install a Solar PV unit in my home?
+                  Are there guidelines to the height of hotels?
                 </button>
                 <button
                   type="button"
@@ -219,9 +219,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What is the parent ministry of EMA?')}
+                  onClick={(_) => setQuery('What constitutes a B2 site?')}
                 >
-                  What is the parent ministry of EMA?
+                  What constitutes a B2 site?
                 </button>
                 <button
                   type="button"
@@ -230,9 +230,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('Who is the CEO of EMA?')}
+                  onClick={(_) => setQuery('What is the GFA scheme?')}
                 >
-                  Who is the CEO of EMA?
+                  What is the GFA scheme?
                 </button>
               </div>
             </div>

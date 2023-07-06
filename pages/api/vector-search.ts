@@ -51,7 +51,8 @@ export default async function handler(req: NextRequest) {
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey)
 
     // Moderate the content to comply with OpenAI T&C
-    const sanitizedQuery = query.trim()
+    const sanitizedQuery = query.trim().concat(" Answer in specific, numerical terms if possible.")
+    console.log(sanitizedQuery);
     const moderationResponse: CreateModerationResponse = await openai
       .createModeration({ input: sanitizedQuery })
       .then((res) => res.json())
@@ -68,7 +69,7 @@ export default async function handler(req: NextRequest) {
     // Create embedding from query
     const embeddingResponse = await openai.createEmbedding({
       model: 'text-embedding-ada-002',
-      input: sanitizedQuery.replaceAll('\n', ' '),
+      input: sanitizedQuery.replaceAll('\n', ' ')
     })
 
     if (embeddingResponse.status !== 200) {
@@ -113,12 +114,12 @@ export default async function handler(req: NextRequest) {
     const prompt = codeBlock`
       ${oneLine`
         Your name is Jamie Neo.
-        You are a very enthusiastic Government Officer working for EMA in 
+        You are a very enthusiastic Government Officer working for URA in 
         Singapore, who loves to help people! Use the the following sections from the 
-        EMA website to answer questions given by the user. The answer should be
+        URA Development Control Guidelines website to answer questions given by the user. The answer should be
         outputted in markdown format. If you are unsure or the answer
         is not explicitly written in the Context section you can infer the answer,
-        but caveat the answer by mentioning this is not mentioned on the EMA Website.
+        but caveat the answer by mentioning this is not mentioned on the URA Development Control Guidelines website.
       `}
 
       Context sections:
@@ -126,7 +127,7 @@ export default async function handler(req: NextRequest) {
 
       
 
-      Answer as markdown (embed links if it is mentioned in the Context sections) :
+      Answer as markdown (embed links if it is mentioned in the Context sections):
     `
 
     const response = await openai.createChatCompletion({
