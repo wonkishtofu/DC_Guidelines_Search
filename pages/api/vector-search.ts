@@ -52,7 +52,6 @@ export default async function handler(req: NextRequest) {
 
     // Moderate the content to comply with OpenAI T&C
     const sanitizedQuery = query.trim().concat(" Answer in specific, numerical terms if possible.")
-    console.log(sanitizedQuery);
     const moderationResponse: CreateModerationResponse = await openai
       .createModeration({ input: sanitizedQuery })
       .then((res) => res.json())
