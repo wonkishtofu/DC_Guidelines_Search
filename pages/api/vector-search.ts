@@ -109,7 +109,7 @@ export default async function handler(req: NextRequest) {
 
       contextText += `${content.trim()}\n---\n`
     }
-
+    console.log(contextText)
     const prompt = codeBlock`
       ${oneLine`
         Your name is Jamie Neo.
