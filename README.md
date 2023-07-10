@@ -1,28 +1,16 @@
-# Document-grounded Generation Search for EMA
+# Document-grounded Generation Search for URA's DC Guidelines
 
 Try the demo here: 
-[![Demo Website](./public/demo.png)](https://ema-doc-search.vercel.app/)
+*To be updated*
 
 ## Background
 
-This project was conceived as part of an annual Hackathon at DSAID, GovTech (Singapore) in 2023.
+The motivation for this bot is that searching for information on the Development Control (DC) guidelines website can be intimidating due to the large amount of information on the website. This is where a Q&A bot like this one can come in to provide users with an efficient way of getting the information they need about the DC guidelines.
 
-The Energy Market Authority of Singapore (EMA) faced perennial problem which plagues public officers Government-wide: 
-
-- Members of the public are often unable to find information publicly available on Government Websites. 
-- They email public officers with their enquiries; and our public officers are flooded with common enquiries already addressed on their Government FAQs 
-
-Often, the answer to most public enquiries are scattered across our websites; and they require cross-referencing between various sources to arrive at a coherent answer. While traditional search systems may point users to information sources, more is needed to synthesise search output to get users the answers they seek. 
-
-## Prototype Solution 
-
-[Document Grounded Generation](https://blog.ml.cmu.edu/2021/06/25/document-grounded-generation/) was first posited by [Shrimai Prabhumoye](https://shrimai.github.io/) at CMU ML, as a method for grounding Generative AI output with context documents. 
+The technology behind the bot is Document Grounded generation. [Document Grounded Generation](https://blog.ml.cmu.edu/2021/06/25/document-grounded-generation/) was first posited by [Shrimai Prabhumoye](https://shrimai.github.io/) at CMU ML, as a method for grounding Generative AI output with context documents. 
 
 ![DGG](https://blog.ml.cmu.edu/wp-content/uploads/2021/05/content_grounded_v3_1-1024x374-1-970x354.png)
 
-In our prototype solution, we built a search assistant we applied Document Grounded Generation to search results derived from a traditional vector search on EMA's knowledge base. 
-
-We envision that this could be deployed alongside existing search systems on government websites, as a production-ready module that can be redeployed easily, and maintained centrally. 
 
 ## Deploy
 
