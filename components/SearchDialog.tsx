@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { useCompletion } from 'ai/react'
-import { X, Loader, User, Frown, CornerDownLeft, Search, Wand } from 'lucide-react'
+import { X, Loader, User, Frown, CornerDownLeft, Search, Wand, AlertTriangle } from 'lucide-react'
 import { MemoizedReactMarkdown } from '@/components/markdown'
 
 export function SearchDialog() {
@@ -81,9 +81,32 @@ export function SearchDialog() {
       <Dialog open={open}>
         <DialogContent className="sm:max-w-[850px] text-black overflow-scroll max-h-screen overscroll-none">
           <DialogHeader>
-            <DialogTitle>Ask the bot:</DialogTitle>
+            <DialogTitle>Ask URA - Development Control Guidelines</DialogTitle>
             <DialogDescription>
-              ChatGPT for DC Guidelines
+              This Document Grounded Generative Search prototype was built as part of a
+              Hackathon organised by GovTech - DSAID and adapted with URA's <a href='https://www.ura.gov.sg/Corporate/Guidelines/Development-Control'>Development Control Guidelines</a>. <br />
+              Project Repository -
+              <a href="https://github.com/wonkishtofu/next_doc_search"> Link 🔗</a>
+              <div className="flex items-center gap-4">
+                <span className="bg-yellow-100 p-2 w-8 h-8 rounded-full text-center flex items-center justify-center">
+                  <AlertTriangle width={18} />
+                </span>
+                <span className="grid gap-4 dark:text-slate-100">
+                  <p className="mt-2">
+                    <ul>
+                      <li>
+                        By using the service, you acknowledge you recognise the possibility of AI
+                        generating inaccurate or wrong responses and{' '}
+                        <b>you take full responsibility over how you use the generated output</b>.
+                      </li>
+                      <li>
+                        Your prompts will be stored by commmercial vendors, and you may only use
+                        this prototype for workloads classified - <br /> <b>Official (Open)</b>.
+                      </li>
+                    </ul>
+                  </p>
+                </span>
+              </div>
             </DialogDescription>
             <hr />
             <button className="absolute top-0 right-2 p-2" onClick={() => setOpen(false)}>
@@ -120,8 +143,10 @@ export function SearchDialog() {
               )}
 
               {completion && !error ? (
-                <div className="flex items-center gap-4 dark:text-white whitespace-wrap" >
-                  <Image width="25" height="25" src={'/bot.png'} alt="Jamie Neo" />
+                <div className="flex items-center gap-4 dark:text-white whitespace-wrap">
+                  <span className="bg-green-100 p-2 w-8 h-8 rounded-full text-center flex items-center justify-center">
+                    <Wand width={18} />
+                  </span>
                   <h3 className="font-semibold">Answer:</h3>
                   <MemoizedReactMarkdown
                     className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
@@ -129,7 +154,7 @@ export function SearchDialog() {
                     components={{
                       p({ children }) {
                         return <p className="mb-2 last:mb-0">{children}</p>
-                      }
+                      },
                     }}
                   >
                     {completion}
@@ -146,8 +171,9 @@ export function SearchDialog() {
                   className="col-span-3"
                 />
                 <CornerDownLeft
-                  className={`absolute top-3 right-5 h-4 w-4 text-gray-300 transition-opacity ${query ? 'opacity-100' : 'opacity-0'
-                    }`}
+                  className={`absolute top-3 right-5 h-4 w-4 text-gray-300 transition-opacity ${
+                    query ? 'opacity-100' : 'opacity-0'
+                  }`}
                 />
               </div>
               <DialogFooter>
@@ -164,7 +190,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('Is there a minimum building setback from roads for condos?')}
+                  onClick={(_) =>
+                    setQuery('Is there a minimum building setback from roads for condos?')
+                  }
                 >
                   Is there a minimum building setback from roads for condos?
                 </button>
@@ -236,7 +264,6 @@ export function SearchDialog() {
                 </button>
               </div>
             </div>
-
           </form>
         </DialogContent>
       </Dialog>
