@@ -86,7 +86,9 @@ The initialization of the database, including the setup of the `pgvector` extens
 
 ### Start Supabase
 
-Make sure you have Docker installed and running locally. Then run
+Make sure you have Docker installed and running locally. The follow the steps on: https://supabase.com/docs/guides/self-hosting/docker
+
+Then run
 
 ```bash
 supabase start
