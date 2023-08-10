@@ -276,10 +276,10 @@ async function generateEmbeddings() {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
     !process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    !process.env.OPENAI_KEY
+    !process.env.API_KEY
   ) {
     return console.log(
-      'Environment variables NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and OPENAI_KEY are required: skipping embeddings generation'
+      'Environment variables NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and API_KEY are required: skipping embeddings generation'
     )
   }
 
@@ -415,19 +415,22 @@ async function generateEmbeddings() {
       }
 
       console.log(`[${path}] Adding ${sections.length} page sections (with embeddings)`)
-      for (const { slug, heading, content } of sections) {
+      for (let { slug, heading, content } of sections) {
         // OpenAI recommends replacing newlines with spaces for best results (specific to embeddings)
-        const input = content.replace(/\n/g, ' ')
+        //const relative_path = slug? path!.substring(6).concat('#').concat(slug!): slug;
+        const input = '## '.concat(path!.substring(6).concat(': ').concat(content.substring(2).replace(/\n/g, ' ')))
+        heading = heading? path!.substring(6).concat(': ').concat(heading): undefined
+        content = '## '.concat(path!.substring(6).concat(': ').concat(content.substring(2)))
 
         try {
           const configuration = new Configuration({
-            apiKey: process.env.OPENAI_KEY,
+            apiKey: process.env.API_KEY,
           })
           const openai = new OpenAIApi(configuration)
 
           const embeddingResponse = await openai.createEmbedding({
             model: 'text-embedding-ada-002',
-            input,
+            input
           })
 
           if (embeddingResponse.status !== 200) {

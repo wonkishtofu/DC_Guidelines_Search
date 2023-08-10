@@ -83,10 +83,6 @@ export function SearchDialog() {
           <DialogHeader>
             <DialogTitle>Ask URA - Development Control Guidelines</DialogTitle>
             <DialogDescription>
-              This Document Grounded Generative Search prototype was built as part of a
-              Hackathon organised by GovTech - DSAID and adapted with <a href='https://www.ura.gov.sg/Corporate/Guidelines/Development-Control'>URA Development Control Guidelines</a>. <br />
-              Project Repository -
-              <a href="https://github.com/wonkishtofu/next_doc_search"> Link 🔗</a>
               <div className="flex items-center gap-4">
                 <span className="bg-yellow-100 p-2 w-8 h-8 rounded-full text-center flex items-center justify-center">
                   <AlertTriangle width={18} />

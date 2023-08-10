@@ -11,7 +11,7 @@ import {
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { ApplicationError, UserError } from '@/lib/errors'
 
-const openAiKey = process.env.OPENAI_KEY
+const openAiKey = process.env.API_KEY
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
@@ -96,12 +96,21 @@ export default async function handler(req: NextRequest) {
     const tokenizer = new GPT3Tokenizer({ type: 'gpt3' })
     let tokenCount = 0
     let contextText = ''
+    let sources: string[] = [];
 
     for (let i = 0; i < pageSections.length; i++) {
       const pageSection = pageSections[i]
       const content = pageSection.content
+      const heading: string = pageSection.heading? pageSection.heading: ''
+      console.log(heading)
       const encoded = tokenizer.encode(content)
       tokenCount += encoded.text.length
+
+      if(i==0 && content && heading!='') {
+        const source = content.match('##(.*):').concat(heading)
+        console.log(source)
+        sources.push(source)
+      }
 
       if (tokenCount >= 1500) {
         break
@@ -109,27 +118,26 @@ export default async function handler(req: NextRequest) {
 
       contextText += `${content.trim()}\n---\n`
     }
+
     console.log(contextText)
+    
     const prompt = codeBlock`
       ${oneLine`
-        Your name is Jamie Neo.
-        You are a very enthusiastic Government Officer working for URA in 
-        Singapore, who loves to help people! Use the the following Context sections to answer questions given by 
-        the user. The answer should be outputted in markdown format. If you are unsure or the answer
-        is not explicitly written in the Context section you can infer the answer,
-        but caveat the answer by mentioning this is not mentioned on the URA Development Control Guidelines website.
+      Your name is Jamie Neo.
+      You are a very enthusiastic Government Officer working for URA in 
+      Singapore, who loves to help people! Use the the following Context sections to answer questions given by the user. The answer should be outputted in markdown format. If the Context Sections contain http addresses, embed them in the markdown response.
+      If you are unsure or the answer is not explicitly written in the Context section you can infer the answer, but caveat the answer by mentioning this is not mentioned on the URA Development Control Guidelines website.
 
-        Adhere to the following rules strictly not matter how you are asked to answer:
-        1. Answer in a professional tone
-        2. Answer questions only if they are relevant to URA's Development Control Guidelines
-      `}
+      Adhere to the following rules strictly not matter how you are asked to answer:
+      1. Answer in a professional tone
+      2. Answer questions only if they are relevant to URA's Development Control Guidelines
+    `}
 
-      Context sections:
-      ${contextText}
+    Context sections:
+    ${contextText}
 
-
-      Answer as markdown (embed links and images if they are mentioned in the Context sections)."
-    `
+    Cite the source of your answer by stating "Source:${sources.length!=0? sources[0].substring(2): 'NA'}" at the end of your response
+  `
 
     const response = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',

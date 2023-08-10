@@ -1,0 +1,289 @@
+# Change of Use
+
+## What is the procedure and requirements to operate a service apartment?
+You will need to submit a Change of Use request for the property.
+
+## Do I have to submit for change of use approval if there is a change in tenant or owner of the property?
+
+The approval for the change of use is granted to the premises. It is not tied to the tenant or the owner of the property. As such, a change of use application is not required if there is a change in operator or owner, so long as there is no change to the approved use of the premises.
+
+## How can I check the approved use of a premise?
+
+You may ask the property owner for a copy of the Grant of Written Permission from URA, which states the approved use of the premises.
+
+Alternatively, you can use our online development register via URA SPACE to download the Grant of Written Permission if the premises has been granted approval for a specific use. Downloading of the planning decision is free. Once you are on URA SPACE, type the address in the search bar.
+
+However, planning decisions given before the year 2000 may not be available online. For such cases, please make an enquiry with us. There is a search fee of $53.50 (inclusive of GST).
+
+For more information on how to apply, renew or enquire on the approved use of premises, follow this link: https://www.ura.gov.sg/Corporate/Property/Business/Change-Use-of-Property-for-Business
+
+## How do I check if a particular use can be allowed at specific shophouse?  
+ 
+You may use the Allowable Use for Shophouses via URA SPACE to find out whether a proposed use is likely to be allowed. Once you on URA SPACE, type the address in the search bar. 
+ 
+If it is not a shophouse, please use the online development register to view planning decisions issued for development proposals on your premises. Downloading of the planning decision is free. 
+ 
+Follow this link to find out more on how to change the use of your property: https://www.ura.gov.sg/Corporate/Property/Business/Change-Use-of-Property-for-Business
+
+## How do I check the status of my change of use application? 
+You can check the status of your application using our eService.  
+ 
+The processing time for most change of use cases is 10 working days. More time may be required if we need to consult other agencies for your application.  
+ 
+## How do I submit a change of use application?  
+Follow this link to find out how you can submit a change of use application: https://www.ura.gov.sg/Corporate/Property/Business/Change-Use-of-Property-for-Business
+ 
+## How do I submit a change of use lodgment?  
+Follow this link to learn more about change of use of lodgment: https://www.ura.gov.sg/Corporate/Property/Business/Change-Use-Lodgment
+ 
+## How do I submit a renewal application for change of use?  
+To apply for Renewal of Use, submit the application via GoBusiness Licensing Porta.
+Follow this link to submit a renewal application for change of use: https://licence1.business.gov.sg/web/frontier/non360?actionType=Renew
+ 
+## How long does it take for URA to process a change of use application?  
+You can expect a planning decision from URA within 10 working days. More time may be required if we need to consult other agencies for your application.  
+ 
+## How long is a Change of use approval valid for?  
+Change of use applications are subject to contextual evaluation. The use may be allowed on permanent permission or temporary permission depending on the site context and proposed use.  
+ 
+## How will I be informed that the application for approval use of premises is ready?  
+You will be informed of the application outcome of your change of use application through the email you provided in the application form.  
+
+
+## What are the submission requirements for a change of use application? 
+The submission requirements for a change of use application are as follows.  
+•Location Plan - For multi-unit developments (e.g. shopping centre, flatted factory), please attach a location plan indicating the location of your premises 
+ 
+•Floor Plan - A floor plan showing the proposed layout and usage of the premises 
+ 
+•Landowner's Consent - If the premises are leased from the Singapore Land Authority, Housing Development Board of Jurong Town Corporation, please attach their letter of consent as land owner 
+ 
+•Other supporting documents (if applicable) - These include a cover letter and clearances from other Government agencies (e.g. SCDF, LTA, NEA, PUB) relevant to your proposed use 
+ 
+You can submit the required documents when you make the change of use application at LicenceOne. Alternatively, you can choose to submit the documents offline, via email.  
+ 
+## What is a "change of use" of premises?  
+Every premises in Singapore is approved for a specific use. These uses are classified into business uses based on their mode of operation and potential impact on the amenity of neighbourhood. Thus changing the use of your property (e.g. from a beauty salon to a restaurant, or from a shop to a commercial school) may require planning permission.  
+ 
+I cannot answer on specific property. To find out if your business use is allowed, read up on this list of considerations for property use. 
+ 
+To learn more about "change of use", please refer to Changing the Use of your Property   
+
+## What is the change of use lodgment scheme?  
+The change of use lodgment scheme allows certain uses within selected buildings to be lodged or filed with URA without having to wait for approval. Once lodged, the change of use is deemed authorised. However, please note that the proposal must first comply with a set of lodgement criteria.  
+ 
+Business operators may use the Change of Use Lodgment Scheme webpage to find out whether a proposed use may be lodged. The processing fees for a change of use lodgment is $160.5 (inclusive of GST).  
+ 
+## What is the difference between sites that are zoned Business 1 and Business 2?    
+Sites that are zoned Business 1 (B1) are intended for light industrial uses. Examples include manufacturing of textile goods, packing of dried foodstuffs, manufacturing of containers, printing and publishing industries. 
+ 
+Sites that are zoned Business 2 (B2) are intended for industries with processes or machinery that generate noise, vibration, odour or smoke. Examples include vehicle/motorcycle repair and servicing, installation of tyres and batteries, food manufacturing and manufacturing of furniture and fixtures.  
+ 
+To find out whether your business use is allowed, please refer to “Industrial-Related Uses” in Considerations for Property Use and view the sites in the Master Plan.  
+ 
+A minimum of 60% of the area should be allocated for its intended industrial use, warehouse, etc. The remaining 40% can be for ancillary use, such as ancillary office, meeting room, etc. This is applicable for sites zoned Business 1 and Business 2.  
+ 
+Refer to Non-Residential Handbook for more details.
+
+## When do I have to apply for change of use?  
+It is important that you apply for approval for the proposed use before buying or renting a property. 
+ 
+A planning application for change of use would allow URA to assess if the intended new use is compatible and acceptable.  
+ 
+Changing the use of your property (e.g. from a beauty salon to a restaurant, or from a shop to commercial school) may require you to apply for planning permission. You can refer to the Considerations for Property Use to find out if the proposed use requires planning permission.  
+ 
+We encourage you to find out the approved use of the premises and check if you have to apply for change of use approval. It is also important that you apply for approval for the proposed use before buying or renting a property.   
+  
+## Who should apply for the change of use?  
+Either the owner, the tenant or their appointed agents may apply for the change of use.  
+ 
+If the tenant or the appointed agent submits the application, he/she must obtain the owner's prior consent in writing. The applicant has to declare that the owner's consent has been obtained in the application form. 
+
+# Development Application
+ 
+## How long does it take for URA to process a development application?  
+You can expect a planning decision from URA within 20 working days. However, for more complex cases, more time may be required to evaluate the application and consult relevant agencies. 
+ 
+For change of use case, the usual processing time is 10 working days.  
+ 
+## What are the development works that are exempted from planning permission?  
+Unless specifically exempted, all development works (e.g. building, earthworks) require planning permission from URA. 
+ 
+ Certain minor development works are exempted from planning permission. Some of these are: 
+•Maintenance and/or improvement work carried out to a private street or private access road to a building.  
+•Erection of builders' working sheds, contractors' hut, hoardings, scaffolding, etc., on land being developed or to be developed according to a written permission, subject to removal of the structures upon completion of the development.  
+•Construction of gates, walls, fences, paling or other similar means of enclosure with height not exceeding 1.8m, and built with bricks, stone, granite or other similar building material or any combination of the same set in mortar or any other binding material.  
+•Reduction in the overall size of approved buildings which are under construction.  
+ 
+The full list of exempted works are available here: https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Planning-Permission/using-CORENET-eSS/exemption
+ 
+ However, these exemptions do not apply to buildings: 
+•gazetted as national monuments or conservation buildings  
+•located within conservation areas  
+•within street block plan areas  
+•within planning study areas where specific guidelines must be adhered to       
+ 
+For minor development application, click here: https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Planning-Permission/Minor-Development-Application
+
+## What are the processing fees for development applications?  
+Processing fees for development applications vary according to the type of development. You may refer to the most Fee Schedule PDF found on URA's website.
+https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Planning-Permission/Folder/Others/Fees/
+
+# Gross Floor Area
+## What does Gross Floor Area (GFA) mean?  
+The gross floor area or GFA determines the development intensity of a building. All covered floor areas of a building except otherwise exempted, and uncovered areas for commercial uses are deemed the gross floor area of the building. GFA measures the bulk and intensity of a development for the purposes of plot ratio control and computation of development charge. Using this, the owners or developers are free to determine how much neutral areas they want to provide in their building. 
+ 
+GFA is the total area of the covered floor space measured between the centre line of party walls, including the thickness of external walls but excluding voids. All covered floor area of a building, except otherwise exempted, and uncovered areas for commercial uses are deemed the gross floor area of the building for purposes of plot ratio control and development charge. Mezzanine floor, if any, is treated as a floor and regarded as a storey for planning evaluation purposes. 
+
+# Plot Ratio
+## How do you compute plot ratio? 
+ 
+Plot ratio = Gross Floor Area / Site Area  
+ 
+For details, please download the Gross Floor Area handbook: https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/gross-floor-area/GFA
+
+# Home Office
+## Do I need to inform URA if I do not use my home as a Home Office?  
+You do not need to take any action if you no longer want to use your home as a Home Office. The premises will be changed to residential use.  
+ 
+## How long is the Home Office registration valid for? 
+The Home Office registration is a one-time registration. The permission for Home Office use is valid for as long as your Home Office remains in operation. Re-registration is not necessary. 
+ 
+You can refer to Home Office for more information : https://www.ura.gov.sg/Corporate/Guidelines/Home-Business/Home-Office-Scheme
+ 
+## If I do not conduct business activities within the premises and have no non-resident employees, do I need to register my home as a Home Office? 
+You do not need to register for the Home Office Scheme if you use your residential address for business registration purposes only. 
+ 
+You can refer to Home Office for more information: https://www.ura.gov.sg/Corporate/Guidelines/Home-Business/Home-Office-Scheme
+ 
+## What is a Home-Based Business?  
+Home-based business activities are intended for small scale businesses like sewing work and baking at home. 
+ 
+Such businesses are wholly owned and operated by the home owner. The activities should not materially affect the use of the premises as a residential unit and shall not cause disturbance to the neighbours or other residents in the neighbourhood.  
+ 
+You can refer to Home-Based Business for more information: https://www.ura.gov.sg/Corporate/Guidelines/Home-Business
+ 
+## What is the difference between the Home Office Scheme and the Home-Based Business Guidelines?  
+The key difference between the Home Office Scheme and the Small Business Guidelines is that under the Home Office Scheme, you may employ up to two employees who are not residents in the residential premises. Under the Small Business Guidelines, you are not allowed to employ anyone for the home business.  
+ 
+You can refer to Home Business for more detailed information on the two types of uses. 
+ 
+## What is the URA Home Office Scheme?  
+Under the Home Office (HO) Scheme, home owners, tenants or occupants of private residential properties can set up small-scale offices in their homes, as long as they satisfy the prevailing HO guidelines and performance criteria, and ensure that the use does not cause amenity problems to the neighbours.  
+ 
+You can refer to Home Office for more information: https://www.ura.gov.sg/Corporate/Guidelines/Home-Business/Home-Office-Scheme
+
+# Landed Property
+ 
+## How can I find out the allowable building height for landed property?  
+You can find the allowable number of storeys for landed residential properties in Singapore in the Landed Housing Area Plans. Landed properties outside the Landed Housing Plans are generally allowed to be built up to three storeys. In addition, the absolute building height (metres) is subject to our envelop control guidelines. 
+  
+Please note that the allowable building height is expressed in terms of number of storeys for landed housing development. For other types of residential development, the resultant building height in terms of storey is determined by the gross plot ratio prescribed for the site, unless the site is affected by height control plans, envelop control plans, street block plans or other approved special control plans. Some developments may be required to comply with the approved technical height. For more information, please refer to development control handbooks. 
+ 
+To view the maximum permissible plot ratio of a piece of land, you may view the Master Plan via URA SPACE then type the address in the search bar to proceed. The number on the plot represents the maximum permissible plot ratio.
+
+## Can I enclose my balcony?  
+Balconies are meant to be semi-outdoor spaces. They cannot be converted into indoor spaces with full-height solid enclosures. For example, enclosing the balconies with fixed or sliding window panes such as 'Smart windows' is not allowed.  
+ 
+Nonetheless, to address concerns on safety and to provide some form of sun shading, we allow balcony screens provided they are fully retractable and allow for natural ventilation at all times, such as in the form of retractable louvered screens. You can also read more about the balcony enclosures guidelines.   
+ 
+## How can I find out the allowable housing form (i.e. whether terrace, semi-detached or detached uses)?  
+You can find the allowable housing forms for landed residential properties in Singapore in the Landed Housing Area Plans.  
+ 
+URA will evaluate the building form for landed properties outside the Landed Housing Area Plans individually based on the site's context and surrounding developments. 
+ 
+## How is the allowable plot ratio for landed property determined?  
+There is no control on the plot ratio of landed properties. The intensity of landed properties is limited primarily by their storey height. 
+ 
+The plot ratio for landed property is the resultant gross plot ratio after compliance with storey height control for the area and the development control parameters for landed housing such as plot size, road buffer, building setback, floor-to-floor height, site coverage, etc. You can also refer to the interactive visual tool for landed housing. 
+ 
+More information for residential can be found in the Development Control Parameters for Residential Developments handbook.  
+ 
+For non-residential buildings, you can download the Non-Residential handbooks here: https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Non-Residential
+
+## What do I need to know when renovating a landed residential property?  
+First, check whether you require planning permission from URA to renovate your landed residential property. Depending on the nature of renovation, you may need to apply for a planning permission. The types of minor development works exempted from planning permission are the list of exemptions from planning permission.  
+ 
+Then, check if the intended works comply with the development control guidelines such as the required setback of certain building features. You may read up on whether your home improvement works require planning permission and the relevant guidelines. 
+ 
+You can also refer to the interactive visual tool or consult our landed housing chatbot in Landed Housing Area Plans to guide you through your intended renovation works and evaluate on your own if the proposed works comply with the development control guidelines.
+
+## Can I install screening at my balcony?  
+As long as the balconies remain semi-outdoor spaces, i.e. are naturally ventilated at all times. The balconies should not be converted into indoor spaces with full-height solid enclosures. For example, enclosing the balconies with fixed or sliding window panes such as 'Smart windows' is not allowed. In addition, any proposed balcony screens should be fully retractable.  
+ 
+Residents can check with their MCST or the developer for the approved balcony screen design for their development. You can also read more about the balcony enclosures guidelines. 
+ 
+## Is planning permission required to construct a cover over my Private Enclosed Space (PES) / Roof Terrace / balcony? 
+You will need to apply for planning permission only if the cover over Private Enclosed Space (PES)/ roof terrace/ balcony extends beyond 2 metres from the external wall of the unit. We will evaluate applications for the coverings based on prevailing development control guidelines to ensure that such structures are not excessively large and comply with height controls. The covered spaces are to remain open-sided.  
+Whether planning permission is required to construct a cover over your PES / Roof Terrace / balcony depends on the size and location of the cover.
+
+If the cover is open-sided and does not extend beyond 2 meters from the external wall of the unit, you do not need planning permission from URA. However, you will need to seek approval from your Management Corporation Strata Title (MCST) before construction.
+
+If the cover is open-sided but extends beyond 2 meters from the external wall of the unit, or if the cover is enclosed at the sides, you will need to apply for planning permission from URA.
+
+If the cover is enclosed at the sides and has a floor area of more than 10 square meters, you will also need to apply for a building permit from the Building and Construction Authority (BCA).
+
+In all cases, the cover must comply with the URA's development control guidelines. These guidelines specify the maximum size and height of the cover, as well as the setback requirements.
+
+Here are some additional things to keep in mind when constructing a cover over your PES / Roof Terrace / balcony:
+The cover must be made of a non-combustible material.
+The cover must not obstruct the view of neighboring properties.
+The cover must not block the escape routes in case of fire.
+ 
+## My unit has a high ceiling, can I build a loft? 
+We can allow a loft that is similar to a furniture deck for resting purposes and exempt it from planning permission if it meets the following criteria: 
+•the total area is not more than 5 sqm;  
+•it is a lightweight furniture fixture that does not form part of the structural element of the building;  
+•there is only one such loft per unit; and  
+•the headroom of the loft area is not more than the headroom below the loft.
+
+## What do I need to know when renovating a strata-titled residential property, such as my condominium unit?  
+Generally, internal renovation works within your strata unit do not require planning permission. However, renovation works that will result in an increase in Gross Floor Area (GFA) require URA approval. 
+ 
+In particular, if your proposed Additions & Alteration works within the strata unit involve an increase in GFA, you must obtain a letter signed by the Secretary or Chairperson of the council of the Management Committee Strata Title (MCST) confirming that the MCST has obtained 90% resolution and has authorised the carrying out of the proposed works for the strata unit. The signed letter is to be submitted to URA together with the proposal as part of planning application.  
+ 
+## How can I obtain the approved plan for my property?  
+A:  You can access planning permissions granted from year 2000 onwards (search by address) at our online development register via URA SPACE. Once you have launched the page, type the address in the search bar. To download the planning decision, select a listed planning decision and then click on "Request for Decision Notice". 
+ 
+If you can't find your required information, you can apply to URA for a search of the approved plans using our e-service 'Buy Planning Records (DC 15)'. 
+ 
+There is a search fee of $107 (including GST). There are also fees if you request for additional plans or printing of documents. 
+ 
+You may also read up on Legal Requisition if you are seeking information on the latest planning decision and the current Master Plan zoning for a property.  
+
+# Planning permission
+## How do I apply for planning permission?  
+To submit a development application for planning permission, please refer to the step-by-step guide on application as well as submission requirements/documents 
+ 
+# DC Forms
+## Where are the Development Control (DC) forms?  
+You can download forms for planning permission application such as EDAform and declaration forms.   
+ 
+# Use Group
+## Where can I find information on use groups?  
+
+The URA's Development Control (DC) Guidelines define use groups as "broad categories of permitted uses for land and buildings". The use group of a property determines the types of activities that can be carried out on the property.
+
+You can find information on use groups in the URA's DC Guidelines, specifically in the Use Groups Table. The Use Groups Table lists all of the use groups in Singapore, along with the purposes for which development is permitted or to be authorised within each use group.
+
+The Use Groups Table can be found here: https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/Planning-Permission/Folder/DC-Charge-Rates/DC-rates/2022/use-groups-table/u-groups2008mar2022
+
+In addition to the Use Groups Table, the URA's DC Guidelines also contain a number of other documents that provide more detailed information on use groups. These documents include:
+
+Use Group Notes - These notes provide additional information on the purposes of development that are permitted or to be authorised within each use group.
+Use Group Guidelines - These guidelines provide more detailed guidance on the planning requirements for development within each use group.
+
+
+# Development Charge
+## Where can I find the development charge sector, maps and rates?  
+
+# Internal partitions
+## Can I create internal partitions in a residential property?  
+You can install minor internal partitioning works provided they do not alter the residential nature of the original unit which should include the usual essential amenities, including a proper kitchen, living and dining area. 
+ 
+You cannot create new sub-units or 'studios' capable of being operated independently for sale or rental unless we have given prior approval.  
+
+# Reporting Planning Infringement
+## How can I report a planning infringement to URA?  
+You may make use of URA’s online feedback form to report a planning infringement. 
+https://www.ura.gov.sg/feedbackWeb/contactus_feedback.jsp
