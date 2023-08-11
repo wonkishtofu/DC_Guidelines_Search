@@ -116,8 +116,6 @@ export default async function handler(req: NextRequest) {
 
       contextText += `${content.trim()}\n---\n`
     }
-
-    console.log(sources[0])
     
     const prompt = codeBlock`
       ${oneLine`
