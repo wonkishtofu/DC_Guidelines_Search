@@ -96,19 +96,17 @@ export default async function handler(req: NextRequest) {
     const tokenizer = new GPT3Tokenizer({ type: 'gpt3' })
     let tokenCount = 0
     let contextText = ''
-    let sources: string[] = [];
+    var sources: string[] = [];
 
     for (let i = 0; i < pageSections.length; i++) {
       const pageSection = pageSections[i]
       const content = pageSection.content
       const heading: string = pageSection.heading? pageSection.heading: ''
-      console.log(heading)
       const encoded = tokenizer.encode(content)
       tokenCount += encoded.text.length
 
       if(i==0 && content && heading!='') {
         const source = content.match('##(.*):').concat(heading)
-        console.log(source)
         sources.push(source)
       }
 
@@ -119,7 +117,7 @@ export default async function handler(req: NextRequest) {
       contextText += `${content.trim()}\n---\n`
     }
 
-    console.log(contextText)
+    console.log(sources[0])
     
     const prompt = codeBlock`
       ${oneLine`
@@ -136,7 +134,7 @@ export default async function handler(req: NextRequest) {
     Context sections:
     ${contextText}
 
-    Cite the source of your answer by stating "Source:${sources.length!=0? sources[0].substring(2): 'NA'}" at the end of your response
+    Cite the source of your answer by stating "Source:${sources.length!=0 && sources[0].length>2? sources[0]: 'NA'}" at the end of your response
   `
 
     const response = await openai.createChatCompletion({
