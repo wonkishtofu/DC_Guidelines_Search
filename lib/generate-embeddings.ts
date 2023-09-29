@@ -322,12 +322,13 @@ async function generateEmbeddings() {
         .filter('path', 'eq', path)
         .limit(1)
         .maybeSingle()
-
+      console.log(path)
       if (fetchPageError) {
+        console.log("what is up?")
         throw fetchPageError
       }
 
-      type Singular<T> = T extends any[] ? undefined : T
+      type Singular<T> = T extends any[] ? unknown : T
 
       // We use checksum to determine if this page & its sections need to be regenerated
       if (!shouldRefresh && existingPage?.checksum === checksum) {
@@ -336,7 +337,7 @@ async function generateEmbeddings() {
         >
 
         // If parent page changed, update it
-        if (existingParentPage?.path !== parentPath) {
+        if ((existingParentPage as { path: string })?.path !== parentPath) {
           console.log(`[${path}] Parent page has changed. Updating to '${parentPath}'...`)
           const { error: fetchParentPageError, data: parentPage } = await supabaseClient
             .from('nods_page')
