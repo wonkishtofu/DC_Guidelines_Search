@@ -21,7 +21,7 @@
     "sqlKeywordCase": "lower"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-dialog": "1.0.4",
     "@radix-ui/react-label": "^2.0.2",
     "@supabase/supabase-js": "^2.33.2",
     "@types/node": "20.7.1",
