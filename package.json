@@ -23,11 +23,11 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-label": "^2.0.2",
-    "@supabase/supabase-js": "^2.36.0",
-    "@types/node": "18.15.10",
+    "@supabase/supabase-js": "^2.33.2",
+    "@types/node": "20.7.1",
     "@types/react": "18.0.30",
     "@types/react-dom": "18.0.11",
-    "ai": "^2.2.13",
+    "ai": "^2.2.12",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
@@ -46,8 +46,8 @@
     "next": "13.2.4",
     "openai": "^3.3.0",
     "openai-edge": "^1.2.2",
+    "package.json": "^2.0.1",
     "react": "18.2.0",
-    "react-dialog:1.0.4": "link:@radix-ui/react-dialog:1.0.4",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
     "remark-gfm": "^3.0.1",
@@ -61,14 +61,14 @@
   },
   "devDependencies": {
     "@types/common-tags": "^1.8.2",
-    "@types/estree": "^1.0.2",
-    "@types/mdast": "^3.0.13",
-    "@types/yargs": "^17.0.26",
-    "autoprefixer": "^10.4.16",
+    "@types/estree": "^1.0.1",
+    "@types/mdast": "^3.0.12",
+    "@types/yargs": "^17.0.24",
+    "autoprefixer": "^10.4.15",
     "dotenv": "^16.3.1",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.29",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.3",
-    "tsx": "^3.13.0"
+    "tsx": "^3.12.10"
   }
 }
