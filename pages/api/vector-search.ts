@@ -11,7 +11,7 @@ import {
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { ApplicationError, UserError } from '@/lib/errors'
 
-const openAiKey = process.env.API_KEY
+const openAiKey = process.env.OPENAI_KEY
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
@@ -116,11 +116,11 @@ export default async function handler(req: NextRequest) {
 
       contextText += `${content.trim()}\n---\n`
     }
-    
+
     const prompt = codeBlock`
       ${oneLine`
       Your name is Jamie Neo.
-      You are a very enthusiastic Government Officer working for URA in 
+      You are a very enthusiastic Government Officer working for URA in
       Singapore, who loves to help people! Use the the following Context sections to answer questions given by the user. The answer should be outputted in markdown format. If the Context Sections contain http addresses, embed them in the markdown response.
       If you are unsure or the answer is not explicitly written in the Context section you can infer the answer, but caveat the answer by mentioning this is not mentioned on the URA Development Control Guidelines website.
 

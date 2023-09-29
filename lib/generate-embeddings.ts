@@ -276,10 +276,10 @@ async function generateEmbeddings() {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
     !process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    !process.env.API_KEY
+    !process.env.OPENAI_KEY
   ) {
     return console.log(
-      'Environment variables NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and API_KEY are required: skipping embeddings generation'
+      'Environment variables NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and OPENAI_KEY are required: skipping embeddings generation'
     )
   }
 
@@ -424,7 +424,7 @@ async function generateEmbeddings() {
 
         try {
           const configuration = new Configuration({
-            apiKey: process.env.API_KEY,
+            apiKey: process.env.OPENAI_KEY,
           })
           const openai = new OpenAIApi(configuration)
 
