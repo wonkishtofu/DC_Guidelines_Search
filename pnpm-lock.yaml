@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@radix-ui/react-dialog':
-    specifier: ^1.0.5
+    specifier: ^1.0.4
     version: 1.0.5(@types/react-dom@18.0.11)(@types/react@18.0.30)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-label':
     specifier: ^2.0.2
@@ -83,6 +83,9 @@ dependencies:
   react:
     specifier: 18.2.0
     version: 18.2.0
+  react-dialog:1.0.4:
+    specifier: link:@radix-ui/react-dialog:1.0.4
+    version: link:@radix-ui/react-dialog:1.0.4
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
