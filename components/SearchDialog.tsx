@@ -83,9 +83,8 @@ export function SearchDialog() {
           <DialogHeader>
             <DialogTitle>ChatDCG - Development Control Guidelines</DialogTitle>
             <DialogDescription>
-              This Document Grounded Generative Search prototype was built for URA, adapted from a
-              Hackathon project, organised by GovTech - DSAID (2023). Our prototype is a proof-of-concept
-              (POC) designed to provide accessible information about development control guidelines. To
+              This Document Grounded Generative Search prototype was built for URA. This prototype is
+              designed to provide accessible information about development control guidelines. To
               learn more, please contact the project maintainers listed in the project repository.
               <br />
               Project Repository (Private) -{' '}
