@@ -21,6 +21,20 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Add env file
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }},
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }},
+          SUPABASE_SERVICE_ROLE_KEY: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }},
+          OPENAI_KEY: ${{ vars.OPENAI_KEY }}
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL >> .env
+          echo NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY >> .env
+          echo SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY >> .env
+          echo OPENAI_KEY=$OPENAI_KEY >> .env
+          echo NODE_ENV=production >> .env
+
       - name: npm install, build, and test
         run: |
           npm install
@@ -34,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./.next
+          path: ./.next/
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,4 +70,4 @@ jobs:
           app-name: 'chatdcg'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_40E94809D6FB408EA3DEFFDACFF00D9F }}
-          package: .
+          package: ./.next/
