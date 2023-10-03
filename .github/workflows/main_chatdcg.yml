@@ -70,4 +70,4 @@ jobs:
           app-name: 'chatdcg'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_40E94809D6FB408EA3DEFFDACFF00D9F }}
-          package: ./.next/
+          package: .
