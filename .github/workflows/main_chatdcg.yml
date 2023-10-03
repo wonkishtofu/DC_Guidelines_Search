@@ -43,12 +43,15 @@ jobs:
           export NEXT_SHARP_PATH=/tmp/node_modules/sharp
           npm run build
 
+      - name: zip
+        run: |
+           zip -r app.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./.next/
+          path: app.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,6 +65,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
+      - run: |
+          unzip app.zip
+          rm app.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
