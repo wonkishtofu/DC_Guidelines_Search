@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM --platform=linux/amd64 node:18-alpine AS base
 RUN npm i -g pnpm
 
 # Install dependencies only when needed
@@ -31,7 +31,7 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn build
-RUN npm add sharp
+RUN pnpm add sharp
 RUN export NEXT_SHARP_PATH=/tmp/node_modules/sharp
 # If using npm comment out above and use below instead
 RUN pnpm run build
