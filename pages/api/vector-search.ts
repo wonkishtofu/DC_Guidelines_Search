@@ -2,12 +2,14 @@ import type { NextRequest } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { codeBlock, oneLine } from 'common-tags'
 import GPT3Tokenizer from 'gpt3-tokenizer'
-import {
-  Configuration,
-  OpenAIApi,
-  CreateModerationResponse,
-  CreateEmbeddingResponse,
-} from 'openai-edge'
+// import {
+//   Configuration,
+//   OpenAIApi,
+//   CreateModerationResponse,
+//   CreateEmbeddingResponse,
+// } from 'openai-edge'
+import OpenAI from 'openai'
+
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { ApplicationError, UserError } from '@/lib/errors'
 
@@ -15,10 +17,10 @@ const openAiKey = process.env.OPENAI_KEY
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-const config = new Configuration({
+
+const openai = new OpenAI({
   apiKey: openAiKey,
 })
-const openai = new OpenAIApi(config)
 
 export const runtime = 'edge'
 
@@ -52,9 +54,7 @@ export default async function handler(req: NextRequest) {
 
     // Moderate the content to comply with OpenAI T&C
     const sanitizedQuery = query.trim().concat(" Answer in specific, numerical terms if possible.")
-    const moderationResponse: CreateModerationResponse = await openai
-      .createModeration({ input: sanitizedQuery })
-      .then((res) => res.json())
+    const moderationResponse = await openai.moderations.create({ input:sanitizedQuery })
 
     const [results] = moderationResponse.results
 
@@ -66,18 +66,18 @@ export default async function handler(req: NextRequest) {
     }
 
     // Create embedding from query
-    const embeddingResponse = await openai.createEmbedding({
+    const embeddingResponse = await openai.embeddings.create({
       model: 'text-embedding-ada-002',
       input: sanitizedQuery.replaceAll('\n', ' ')
     })
 
-    if (embeddingResponse.status !== 200) {
-      throw new ApplicationError('Failed to create embedding for question', embeddingResponse)
-    }
+    // if (embeddingResponse.status !== 200) {
+    //   throw new ApplicationError('Failed to create embedding for question', embeddingResponse)
+    // }
 
     const {
       data: [{ embedding }],
-    }: CreateEmbeddingResponse = await embeddingResponse.json()
+    } = await embeddingResponse
 
     const { error: matchError, data: pageSections } = await supabaseClient.rpc(
       'match_page_sections',
@@ -135,16 +135,16 @@ export default async function handler(req: NextRequest) {
     Cite the source of your answer by stating "Source:${sources.length!=0 && sources[0].length>2? sources[0]: 'NA'}" at the end of your response
   `
 
-    const response = await openai.createChatCompletion({
+    const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages:[ {"role": "system", "content": prompt},{"role": "user", "content": sanitizedQuery}] ,
       stream: true,
     })
 
-    if (!response.ok) {
-      const error = await response.json()
-      throw new ApplicationError('Failed to generate completion', error)
-    }
+    // if (!response.ok) {
+    //   const error = await response.json()
+    //   throw new ApplicationError('Failed to generate completion', error)
+    // }
 
     // Transform the response into a readable stream
     const stream = OpenAIStream(response)

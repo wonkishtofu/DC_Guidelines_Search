@@ -10,8 +10,7 @@ import { mdxFromMarkdown, MdxjsEsm } from 'mdast-util-mdx'
 import { toMarkdown } from 'mdast-util-to-markdown'
 import { toString } from 'mdast-util-to-string'
 import { mdxjs } from 'micromark-extension-mdxjs'
-import 'openai'
-import { Configuration, OpenAIApi } from 'openai'
+import OpenAI from 'openai'
 import { basename, dirname, join } from 'path'
 import { u } from 'unist-builder'
 import { filter } from 'unist-util-filter'
@@ -423,21 +422,18 @@ async function generateEmbeddings() {
         content = '## '.concat(path!.substring(6).concat(': ').concat(content.substring(2)))
 
         try {
-          const configuration = new Configuration({
+
+          const openai = new OpenAI({
             apiKey: process.env.OPENAI_KEY,
           })
-          const openai = new OpenAIApi(configuration)
 
-          const embeddingResponse = await openai.createEmbedding({
+          const embeddingResponse = await openai.embeddings.create({
             model: 'text-embedding-ada-002',
             input
           })
 
-          if (embeddingResponse.status !== 200) {
-            throw new Error(inspect(embeddingResponse.data, false, 2))
-          }
 
-          const [responseData] = embeddingResponse.data.data
+          const [responseData] = embeddingResponse.data
 
           const { error: insertPageSectionError, data: pageSection } = await supabaseClient
             .from('nods_page_section')
@@ -446,7 +442,7 @@ async function generateEmbeddings() {
               slug,
               heading,
               content,
-              token_count: embeddingResponse.data.usage.total_tokens,
+              token_count: embeddingResponse.usage.total_tokens,
               embedding: responseData.embedding,
             })
             .select()
@@ -458,6 +454,13 @@ async function generateEmbeddings() {
           }
         } catch (err) {
           // TODO: decide how to better handle failed embeddings
+          if(err instanceof OpenAI.APIError) {
+            console.error(err.status)
+            console.error(err.message)
+            console.error(err.code)
+            console.error(err.type)
+
+          }
           console.error(
             `Failed to generate embeddings for '${path}' page section starting with '${input.slice(
               0,
