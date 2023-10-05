@@ -428,6 +428,23 @@ async function generateEmbeddings() {
           })
           const openai = new OpenAIApi(configuration)
 
+          // AZURE OPENAI API CREDENTIALS
+          const azendpoint = process.env.AZ_OPENAI_URL
+          const azkey = process.env.AZ_OPENAI_KEY
+          const azAPIVersion = process.env.AZURE_OPENAI_API_VERSION
+          const configAZ = new Configuration({
+            apiKey: azkey,
+            basePath: azendpoint,
+            // defaultQueryParams: new URLSearchParams({
+            //   'api-version': `${azAPIVersion}`,
+            // }),
+            baseOptions: {
+              headers: {
+                'api-key': azkey,
+              },
+            },
+          })
+
           const embeddingResponse = await openai.createEmbedding({
             model: 'text-embedding-ada-002',
             input

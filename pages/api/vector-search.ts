@@ -15,10 +15,29 @@ const openAiKey = process.env.OPENAI_KEY
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-const config = new Configuration({
+const configOG = new Configuration({
   apiKey: openAiKey,
 })
-const openai = new OpenAIApi(config)
+
+const azendpoint = process.env.AZ_OPENAI_URL
+const azkey = process.env.AZ_OPENAI_KEY
+const azAPIVersion = process.env.AZURE_OPENAI_API_VERSION
+
+const configAZ = new Configuration({
+  apiKey: azkey,
+  basePath: azendpoint,
+  defaultQueryParams: new URLSearchParams({
+    'api-version': `${azAPIVersion}`,
+  }),
+  baseOptions: {
+    headers: {
+      'api-key': azkey,
+    },
+  },
+})
+
+const openaiOG = new OpenAIApi(configOG)
+const openaiAZ = new OpenAIApi(configAZ)
 
 export const runtime = 'edge'
 
@@ -51,13 +70,12 @@ export default async function handler(req: NextRequest) {
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey)
 
     // Moderate the content to comply with OpenAI T&C
-    const sanitizedQuery = query.trim().concat(" Answer in specific, numerical terms if possible.")
-    const moderationResponse: CreateModerationResponse = await openai
+    const sanitizedQuery = query.trim().concat(' Answer in specific, numerical terms if possible.')
+    const moderationResponse: CreateModerationResponse = await openaiOG
       .createModeration({ input: sanitizedQuery })
       .then((res) => res.json())
 
     const [results] = moderationResponse.results
-
     if (results.flagged) {
       throw new UserError('Flagged content', {
         flagged: true,
@@ -66,9 +84,9 @@ export default async function handler(req: NextRequest) {
     }
 
     // Create embedding from query
-    const embeddingResponse = await openai.createEmbedding({
+    const embeddingResponse = await openaiOG.createEmbedding({
       model: 'text-embedding-ada-002',
-      input: sanitizedQuery.replaceAll('\n', ' ')
+      input: sanitizedQuery.replaceAll('\n', ' '),
     })
 
     if (embeddingResponse.status !== 200) {
@@ -96,16 +114,16 @@ export default async function handler(req: NextRequest) {
     const tokenizer = new GPT3Tokenizer({ type: 'gpt3' })
     let tokenCount = 0
     let contextText = ''
-    var sources: string[] = [];
+    var sources: string[] = []
 
     for (let i = 0; i < pageSections.length; i++) {
       const pageSection = pageSections[i]
       const content = pageSection.content
-      const heading: string = pageSection.heading? pageSection.heading: ''
+      const heading: string = pageSection.heading ? pageSection.heading : ''
       const encoded = tokenizer.encode(content)
       tokenCount += encoded.text.length
 
-      if(i==0 && content && heading!='') {
+      if (i == 0 && content && heading != '') {
         const source = content.match('##(.*):').concat(heading)
         sources.push(source)
       }
@@ -119,7 +137,7 @@ export default async function handler(req: NextRequest) {
 
     const prompt = codeBlock`
       ${oneLine`
-      Your name is Jamie Neo.
+      Your name is Ms DCG.
       You are a very enthusiastic Government Officer working for URA in
       Singapore, who loves to help people! Use the the following Context sections to answer questions given by the user. The answer should be outputted in markdown format. If the Context Sections contain http addresses, embed them in the markdown response.
       If you are unsure or the answer is not explicitly written in the Context section you can infer the answer, but caveat the answer by mentioning this is not mentioned on the URA Development Control Guidelines website.
@@ -132,12 +150,17 @@ export default async function handler(req: NextRequest) {
     Context sections:
     ${contextText}
 
-    Cite the source of your answer by stating "Source:${sources.length!=0 && sources[0].length>2? sources[0]: 'NA'}" at the end of your response
+    Cite the source of your answer by stating "Source:${
+      sources.length != 0 && sources[0].length > 2 ? sources[0] : 'NA'
+    }" at the end of your response
   `
 
-    const response = await openai.createChatCompletion({
-      model: 'gpt-3.5-turbo',
-      messages:[ {"role": "system", "content": prompt},{"role": "user", "content": sanitizedQuery}] ,
+    const response = await openaiOG.createChatCompletion({
+      model: 'gpt-4',
+      messages: [
+        { role: 'system', content: prompt },
+        { role: 'user', content: sanitizedQuery },
+      ],
       stream: true,
     })
 
