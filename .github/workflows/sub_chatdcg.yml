@@ -1,0 +1,54 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy Node.js app to Azure Web App - chatdcg
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+
+      - name: Add env file
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }},
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }},
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }},
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }},
+          DOCKER_LOGIN_PASS: ${{ secrets.DOCKER_LOGIN_PASS }},
+          DOCKER_REPO_URL: ${{ secrets.DOCKER_REPO_URL }}
+          DOCKER_REPO_USER: ${{ secrets.DOCKER_REPO_USER }}
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL >> .env
+          echo NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY >> .env
+          echo SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY >> .env
+          echo OPENAI_KEY=$OPENAI_KEY >> .env
+          echo NODE_ENV=production >> .env
+          echo DOCKER_LOGIN_PASS >> .env
+          echo DOCKER_REPO_URL >> .env
+          echo DOCKER_REPO_USER >> .env
+          cat .env
+
+      - name: Login to private repository
+        run: |
+            export DOCKER_LOGIN_PASS=$DOCKER_LOGIN_PASS
+            docker login -u ${{secrets.DOCKER_REPO_USER}} -p ${{secrets.DOCKER_LOGIN_PASS}} ${{secrets.DOCKER_REPO_URL}}}
+
+      - name: Build Docker Image
+        run: |
+            docker build -t chatdcg ./
+            docker tag chatdcg:latest dcgsupabase.azurecr.io/chatdcg:latest
+            docker push dcgsupabase.azurecr.io/chatdcg:latest

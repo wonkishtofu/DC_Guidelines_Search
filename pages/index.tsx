@@ -25,7 +25,7 @@ export default function Home() {
       <div className="py-8 w-full flex items-center justify-center space-x-6">
       <div className="opacity-75 transition hover:opacity-100 cursor-pointer">
           <Link href="https://www.ura.gov.sg/Corporate/" className="flex items-center justify-center">
-          <p className="text-base mr-2">©2023 Urban Redevelopment Authority, Design and Planning Lab, {process.env.MEAN_SECRET}</p>
+          <p className="text-base mr-2">©2023 Urban Redevelopment Authority, Design and Planning Lab</p>
           {/* <Image src={'/logo.webp'} width="60" height="26" alt="URA logo" /> */}
           </Link>
       </div>
