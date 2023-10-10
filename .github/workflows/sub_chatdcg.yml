@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - chatdcg
+name: Build and deploy Docker App on ChatDCGv1
 
 on:
   push:
@@ -45,7 +45,7 @@ jobs:
       - name: Login to private repository
         run: |
             export DOCKER_LOGIN_PASS=$DOCKER_LOGIN_PASS
-            docker login -u ${{secrets.DOCKER_REPO_USER}} -p ${{secrets.DOCKER_LOGIN_PASS}} ${{secrets.DOCKER_REPO_URL}}}
+            docker login -u ${{secrets.DOCKER_REPO_USER}} --password-stdin ${{secrets.DOCKER_LOGIN_PASS}} ${{secrets.DOCKER_REPO_URL}}
 
       - name: Build Docker Image
         run: |
