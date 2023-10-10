@@ -3,7 +3,7 @@ import styles from '@/styles/Home.module.css'
 import { SearchDialog } from '@/components/SearchDialog'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { HoverCard } from '@radix-ui/react-hover-card'
 
 export default function Home() {
   return (
@@ -29,6 +29,21 @@ export default function Home() {
           {/* <Image src={'/logo.webp'} width="60" height="26" alt="URA logo" /> */}
           </Link>
       </div>
+      <HoverCard>
+            <a
+              href="https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/"
+              target="_blank"
+            >
+              <Image
+                src={'/logo.webp'}
+                width="120"
+                height="60"
+                className="absolute bottom-5 right-5"
+                alt="URA logo"
+              />
+            </a>
+          </HoverCard>
+
       </div>
   </main>
   </>

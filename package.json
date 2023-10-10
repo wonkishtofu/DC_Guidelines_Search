@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "pnpm run embeddings && next build",
-    "build_docker": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\"",
@@ -22,6 +21,7 @@
     "sqlKeywordCase": "lower"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "1.0.7",
     "@radix-ui/react-dialog": "1.0.4",
     "@radix-ui/react-label": "^2.0.2",
     "@supabase/supabase-js": "^2.33.2",
@@ -53,6 +53,7 @@
     "react-markdown": "^8.0.7",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "sharp": "^0.32.6",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^4.9.5",

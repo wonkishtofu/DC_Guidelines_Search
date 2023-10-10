@@ -19,7 +19,7 @@ import { X, Loader, User, Frown, CornerDownLeft, Search, Wand, AlertTriangle } f
 import { MemoizedReactMarkdown } from '@/components/markdown'
 
 export function SearchDialog() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(true)
   const [query, setQuery] = React.useState<string>('')
 
   const { complete, completion, isLoading, error } = useCompletion({
@@ -66,7 +66,7 @@ export function SearchDialog() {
       >
         <Search width={15} />
         <span className="border border-l h-5"></span>
-        <span className="inline-block ml-4">Search...</span>
+        <span className="inline-block ml-4">Click Here!</span>
         <kbd
           className="absolute right-3 top-2.5
           pointer-events-none inline-flex h-5 select-none items-center gap-1
@@ -83,12 +83,12 @@ export function SearchDialog() {
           <DialogHeader>
             <DialogTitle>ChatDCG - Development Control Guidelines</DialogTitle>
             <DialogDescription>
-              This Document Grounded Generative Search prototype was built for URA. This prototype is
-              designed to provide accessible information about development control guidelines. To
+              This Document Grounded Generative Search prototype was built for URA. This prototype
+              is designed to provide accessible information about development control guidelines. To
               learn more, please contact the project maintainers listed in the project repository.
               <br />
               Project Repository (Private) -{' '}
-              <a href="https://github.com/wonkishtofu/DC_Guidelines_Search"> Link 🔗</a>.
+              <a href="https://github.com/wonkishtofu/next-doc-search"> Link 🔗</a>.
               <div className="flex items-center gap-4">
                 <span className="bg-yellow-100 p-2 w-8 h-8 rounded-full text-center flex items-center justify-center">
                   <AlertTriangle width={18} />
@@ -192,33 +192,35 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
+                  onClick={(_) => setQuery('What is the minimum road setback for a Condominium Development?')}
+                >
+                  What is the minimum road setback for a Condominium Development?
+                </button>
+                <button
+                  type="button"
+                  className="px-1.5 py-0.5
+                  bg-slate-50 dark:bg-gray-500
+                  hover:bg-slate-100 dark:hover:bg-gray-600
+                  rounded border border-slate-200 dark:border-slate-600
+                  transition-colors"
+                  onClick={(_) => setQuery('How tall can i build my boundary wall?')}
+                >
+                  How tall can i build my boundary wall?
+                </button>
+                <button
+                  type="button"
+                  className="px-1.5 py-0.5
+                  bg-slate-50 dark:bg-gray-500
+                  hover:bg-slate-100 dark:hover:bg-gray-600
+                  rounded border border-slate-200 dark:border-slate-600
+                  transition-colors"
                   onClick={(_) =>
-                    setQuery('Is there a minimum building setback from roads for condos?')
+                    setQuery(
+                      'I want to use my home as a home office, do I need to seek approvals for this?'
+                    )
                   }
                 >
-                  Is there a minimum building setback from roads for condos?
-                </button>
-                <button
-                  type="button"
-                  className="px-1.5 py-0.5
-                  bg-slate-50 dark:bg-gray-500
-                  hover:bg-slate-100 dark:hover:bg-gray-600
-                  rounded border border-slate-200 dark:border-slate-600
-                  transition-colors"
-                  onClick={(_) => setQuery('Are there any height constraints for boundary walls?')}
-                >
-                  Are there any height constraints for boundary walls?
-                </button>
-                <button
-                  type="button"
-                  className="px-1.5 py-0.5
-                  bg-slate-50 dark:bg-gray-500
-                  hover:bg-slate-100 dark:hover:bg-gray-600
-                  rounded border border-slate-200 dark:border-slate-600
-                  transition-colors"
-                  onClick={(_) => setQuery('Where can I build a landed house?')}
-                >
-                  Where can I build a landed house?
+                  I want to use my home as a home office, do I need to seek approvals for this?
                 </button>
                 <button
                   type="button"
@@ -238,9 +240,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('Are there guidelines to the height of hotels?')}
+                  onClick={(_) => setQuery('Can I use my home for an Airbnb?')}
                 >
-                  Are there guidelines to the height of hotels?
+                  Can I use my home for an Airbnb?
                 </button>
                 <button
                   type="button"
@@ -249,9 +251,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What constitutes a B2 site?')}
+                  onClick={(_) => setQuery('What uses are allowed at a B2 site?')}
                 >
-                  What constitutes a B2 site?
+                  What uses are allowed at a B2 site?
                 </button>
                 <button
                   type="button"
@@ -260,9 +262,9 @@ export function SearchDialog() {
                   hover:bg-slate-100 dark:hover:bg-gray-600
                   rounded border border-slate-200 dark:border-slate-600
                   transition-colors"
-                  onClick={(_) => setQuery('What is the GFA scheme?')}
+                  onClick={(_) => setQuery('What can developers do to get Bonus GFA?')}
                 >
-                  What is the GFA scheme?
+                  What can developers do to get Bonus GFA?
                 </button>
               </div>
             </div>
