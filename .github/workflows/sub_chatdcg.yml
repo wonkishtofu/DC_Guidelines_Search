@@ -37,9 +37,6 @@ jobs:
           echo SUPABASE_SERVICE_ROLE_KEY=${{secrets.SUPABASE_SERVICE_ROLE_KEY}} >> .env
           echo OPENAI_KEY=${{secrets.OPENAI_KEY}} >> .env
           echo NODE_ENV=production >> .env
-          echo DOCKER_LOGIN_PASS >> .env
-          echo DOCKER_REPO_URL >> .env
-          echo DOCKER_REPO_USER >> .env
           cat .env
 
       - name: Login to private repository

@@ -29,10 +29,10 @@ jobs:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
           touch .env
-          echo NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL >> .env
-          echo NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY >> .env
-          echo SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY >> .env
-          echo OPENAI_KEY=$OPENAI_KEY >> .env
+          echo NEXT_PUBLIC_SUPABASE_URL=${{secrets.NEXT_PUBLIC_SUPABASE_URL}} >> .env
+          echo NEXT_PUBLIC_SUPABASE_ANON_KEY=${{secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY}} >> .env
+          echo SUPABASE_SERVICE_ROLE_KEY=${{secrets.SUPABASE_SERVICE_ROLE_KEY}} >> .env
+          echo OPENAI_KEY=${{secrets.OPENAI_KEY}} >> .env
           echo NODE_ENV=production >> .env
           echo MEAN_SECRET=this_is_a_secret >> .env
 
