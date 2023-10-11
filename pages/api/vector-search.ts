@@ -70,7 +70,7 @@ export default async function handler(req: NextRequest) {
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey)
 
     // Moderate the content to comply with OpenAI T&C
-    const sanitizedQuery = query.trim().concat(' Answer in specific, numerical terms if possible.')
+    const sanitizedQuery = query.trim().concat(' Answer in specific terms if possible.')
     const moderationResponse: CreateModerationResponse = await openaiOG
       .createModeration({ input: sanitizedQuery })
       .then((res) => res.json())
