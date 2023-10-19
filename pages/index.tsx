@@ -33,7 +33,7 @@ export default function Home() {
               </p>
             </Link>
           </div>
-          {/* <HoverCard>
+          <HoverCard>
             <a
               href="https://www.ura.gov.sg/Corporate/Guidelines/Development-Control/"
               target="_blank"
@@ -46,7 +46,7 @@ export default function Home() {
                 alt="URA logo"
               />
             </a>
-          </HoverCard> */}
+          </HoverCard>
         </div>
       </main>
     </>
