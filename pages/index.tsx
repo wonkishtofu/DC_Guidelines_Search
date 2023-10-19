@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Heead from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { SearchDialog } from '@/components/SearchDialog'
 import Image from 'next/image'
@@ -8,7 +8,7 @@ import { HoverCard } from '@radix-ui/react-hover-card'
 export default function Home() {
   return (
   <>
-    <Head>
+    <Heead>
       <title>DC Guidelines Search</title>
       <meta
         name="description"
@@ -16,7 +16,7 @@ export default function Home() {
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
-    </Head>
+    </Heead>
     <main className={styles.main}>
       <div className={styles.center}>
         <SearchDialog/>
