@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - ChatDCGv2
+name: Build and deploy container app to Azure Web App - ChatDCGv2
 
 on:
   push:
@@ -11,67 +11,41 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: 'ubuntu-latest'
 
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v1
-        with:
-          node-version: '18.x'
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
-      - name: Add env file
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }},
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }},
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }},
-          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-        run: |
-          touch .env
-          echo NEXT_PUBLIC_SUPABASE_URL=${{secrets.NEXT_PUBLIC_SUPABASE_URL}} >> .env
-          echo NEXT_PUBLIC_SUPABASE_ANON_KEY=${{secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY}} >> .env
-          echo SUPABASE_SERVICE_ROLE_KEY=${{secrets.SUPABASE_SERVICE_ROLE_KEY}} >> .env
-          echo OPENAI_KEY=${{secrets.OPENAI_KEY}} >> .env
-          echo NODE_ENV=production >> .env
-          echo MEAN_SECRET=this_is_a_secret >> .env
+    - name: Log in to registry
+      uses: docker/login-action@v2
+      with:
+        registry: https://dcgsupabase.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_bf906c3a5f8048c28b2f611afd1d9d0f }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_cf291eb205414c75821f97de80d04618 }}
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm i -g pnpm
-          pnpm add sharp
-          export NEXT_SHARP_PATH=/tmp/node_modules/sharp
-          npm run build
-
-      - name: zip
-        run: |
-           zip -r app.zip .
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: app.zip
+    - name: Build and push container image to registry
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: dcgsupabase.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_bf906c3a5f8048c28b2f611afd1d9d0f }}/chatdcg:${{ github.sha }}
+        file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: node-app
-
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'ChatDCGv2'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f83061a5e3874991b9e0f6b749842b4e }}
-          package: ./app.zip
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'ChatDCGv2'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f83061a5e3874991b9e0f6b749842b4e }}
+        images: 'dcgsupabase.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_bf906c3a5f8048c28b2f611afd1d9d0f }}/chatdcg:${{ github.sha }}'
